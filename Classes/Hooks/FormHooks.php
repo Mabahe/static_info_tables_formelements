@@ -63,6 +63,10 @@ class FormHooks
      */
     protected function isLoadedLanguageVersion($langKey)
     {
+        if ($langKey === 'en') {
+            return true;
+        }
+
         return ExtensionManagementUtility::isLoaded('static_info_tables_' . $langKey);
     }
 
