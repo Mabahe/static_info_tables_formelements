@@ -36,7 +36,11 @@ class FormHooks
             return;
         }
 
-        $iso2Key = $GLOBALS['TSFE']->lang;
+        /** @var ServerRequest $serverRequest */
+        $serverRequest = $GLOBALS['TYPO3_REQUEST'];
+        /** @var SiteLanguage $siteLanguage */
+        $siteLanguage = $serverRequest->getAttribute('language');
+        $iso2Key = $siteLanguage->getTwoLetterIsoCode();
         
         if (isset($GLOBALS['TSFE']->config['config']['tx_staticinfotablesformelements.']['languageOverwrite'])) {
             $iso2Key = $GLOBALS['TSFE']->config['config']['tx_staticinfotablesformelements.']['languageOverwrite'];
