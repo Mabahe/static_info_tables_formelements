@@ -13,7 +13,7 @@ $EM_CONF['static_info_tables_formelements'] = [
     'version' => '0.0.1-dev',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.7',
+            'typo3' => '9.5',
             'static_info_tables' => '6.5-0.0.0',
         ],
         'conflicts' => [],
